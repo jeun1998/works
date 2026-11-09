@@ -1,0 +1,229 @@
+/* 크기를 계산할 때 테두리와 안쪽 여백까지 포함 */
+* {
+    box-sizing: border-box;
+}
+
+/* 전체 기본 설정 */
+body {
+    margin: 0;
+    font-family: "맑은 고딕", sans-serif;
+    line-height: 1.6;
+    color: #ad9c9c;
+    background-color: rgb(180, 167, 230);
+}
+
+/* main.html 바깥 배경 */
+.main-page {
+    padding: 24px;
+    background-color: #4e4315;
+}
+
+/* 왼쪽 메뉴와 오른쪽 본문을 가로로 배치 */
+.layout {
+    display: flex;
+    gap: 20px;
+
+    width: 800px;
+    max-width: 100%;
+    min-height: 620px;
+
+    margin: 0 auto;
+    padding: 18px;
+
+    border: 6px ridge #a38c5d;
+    background-color: rgb(20, 15, 95);
+}
+
+/* 왼쪽 메뉴 영역 */
+.sidebar {
+    width: 160px;
+    flex-shrink: 0;
+}
+
+.sidebar h1 {
+    margin: 12px 0 24px;
+    font-size: 21px;
+    color: #3047ca;
+}
+
+/* 메뉴 링크 */
+.sidebar a {
+    display: block;
+
+    margin-bottom: 12px;
+    padding: 12px;
+
+    border: 1px solid #3a46ec;
+    border-radius: 6px;
+
+    color: rgb(205, 176, 241);
+    text-align: center;
+    text-decoration: none;
+
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* 메뉴에 마우스를 올리거나 키보드로 선택했을 때 */
+.sidebar a:hover,
+.sidebar a:focus-visible {
+    background-color: #294ec9;
+    color: #16035a;
+}
+
+/* 오른쪽 영역이 남은 너비를 사용 */
+.right-area {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 다른 HTML이 표시되는 본문 */
+iframe {
+    display: block;
+    width: 100%;
+    height: 470px;
+    border: none;
+}
+
+/*
+   첨부 그림을 images/sample.png로 저장하세요.
+   아래 설정은 첨부 그림의 배너와 집 부분을 각각 표시합니다.
+*/
+.banner,
+.home-image {
+    background-image: url("images/sample.png");
+    background-repeat: no-repeat;
+}
+
+/* 첨부 그림의 위쪽 배너 */
+.banner {
+    aspect-ratio: 242 / 52;
+    margin-bottom: 8px;
+
+    background-size: 172.31405% auto;
+    background-position: 64% 5.61798%;
+}
+
+/* 첨부 그림의 집 사진 */
+.home-image {
+    aspect-ratio: 245 / 163;
+
+    background-size: 170.20408% auto;
+    background-position: 63.95349% 44.87179%;
+}
+
+/* 홈페이지 환영 문구 */
+.welcome {
+    margin: 18px 0;
+    color: #dfc696;
+    text-align: center;
+}
+
+/* 메뉴 1, 메뉴 2의 본문 여백 */
+.lesson {
+    padding: 8px 4px 24px;
+}
+
+.lesson h2 {
+    margin: 0 0 14px;
+    font-size: 23px;
+    color: #7a6fdd;
+}
+
+/* 메뉴 1의 표 */
+table {
+    width: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+}
+
+caption {
+    margin-bottom: 10px;
+    text-align: left;
+    color: #cccccc;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #6138c0;
+    text-align: left;
+}
+
+th {
+    background-color: #3527b6;
+}
+
+/* 짝수 번째 행의 배경색 */
+tbody tr:nth-child(even) {
+    background-color: #202020;
+}
+
+/* 메뉴 2의 상자들을 가로로 배치 */
+.cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.card {
+    flex: 1;
+    padding: 18px;
+    border-radius: 14px;
+
+    color: white;
+    box-shadow: 0 5px 12px #2f06a066;
+
+    transition: transform 0.2s;
+}
+
+.card h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 0;
+}
+
+/* 마우스를 올리면 위로 조금 이동 */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.blue {
+    background-color: #244b72;
+}
+
+.orange {
+    background: linear-gradient(135deg, #6968c2, #747ceb);
+}
+
+/* 화면이 좁으면 세로로 배치 */
+@media (max-width: 640px) {
+    .main-page {
+        padding: 12px;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar nav {
+        display: flex;
+        gap: 8px;
+    }
+
+    .sidebar a {
+        flex: 1;
+        margin: 0;
+        padding: 10px 4px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+}

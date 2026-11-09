@@ -1,0 +1,22 @@
+/* 별도의 여러 개의 html 문서에서 스타일 적용 가능 */
+#myid2{
+    background-color: yellow;
+    color: red;
+    font-size: 30px;
+}
+
+/* 동적 선택자 */
+/* input:focus{background-color: blue} */
+/* input:focus{background-color: #ffff23} */
+/*input:focus{background-color: rgb(233,231,21)} */
+input:focus{background-color: rgb(34%, 43%, 78%)}
+
+a:link{text-decoration: none;}
+a:hover{color: orange; font-size: 30px;}
+/* 보모, 자식, 자손, 클랫, 아이디 선택 */
+b{font-size: 10px;}
+/* div,b  div b  div > b  3개는 의미가 다름  */
+div b{font-size: 20px;} /* div tag 자손들 모두 해당 */
+div > b{font-size: 20px;color: blue;} /* div tag 직 */
+div b#hi{font-size: 30px;color: navy;}
+div b.hello{font-size: 50px;}
