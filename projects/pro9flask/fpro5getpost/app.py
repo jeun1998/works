@@ -1,0 +1,32 @@
+from flask import Flask, render_template, request
+app = Flask(__name__);
+
+
+@app.route("/")
+def index():
+    return render_template("index.html");
+
+@app.route("/get_form")
+def get_form():
+    return render_template("get_form.html");
+
+@app.route("/get_result")
+def get_result():
+    name = request.args.get("username")
+    age = request.args.get("age")
+    age = age + "살"
+    return render_template("get_result.html", name=name, age=age)
+
+@app.route("/post_form")
+def post_form():
+    return render_template("post_form.html");
+
+@app.route("/post_result")
+def post_result():
+    name = request.form.get("username")
+    age = request.form.get("age")
+    age = age + "살"
+    return render_template("post_result.html", name=name, email=email)
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000);
