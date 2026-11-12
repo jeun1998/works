@@ -1,5 +1,6 @@
 import pandas as pd
 import scipy.stats as stats
+import numpy as np
 
 data = pd.read_csv("https://raw.githubusercontent.com/pykwon/python/refs/heads/master/testdata_utf8/drinkdata.csv")
 print(data)
