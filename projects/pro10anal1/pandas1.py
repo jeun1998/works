@@ -92,3 +92,19 @@ print(frame2.sort_index(axis=0, ascending=False))
 print(frame2.sort_index(axis=1, ascendint=True))
 print()
 print(frame2.rank(axis=0))
+
+counts = frame2['juso'].value_counts()
+print(counts)
+
+data = {
+    'juso':['서초구 서초2동', '강남구 역삼동', '강남구 대치동'],
+    'inwon':[23, 25, 15]
+}
+fr = pd.DataFrame(data)
+print(fr)
+
+result1 = Series(x.split()[0] for x in fr.juso)
+result2 = Series(x.split()[1] for x in fr.juso)
+print(result1)
+print(result2)
+print(result1.value_counts)

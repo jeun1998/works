@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직원 분석 결과</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        th, td {
+            border: 1px solid rgb(98, 238, 4);
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: rgb(218, 11, 114);
+        }
+
+        h3 {
+            margin-top: 35px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>MariaDB 직원 데이터 분석 결과</h2>
+
+    <hr>
+
+    <h3>1. 직원 기본 정보</h3>
+    {{ table1 | safe }}
+
+    <h3>2. 부서명, 직급별 연봉 합계 및 평균</h3>
+    {{ table2 | safe }}
+
+    <h3>3. 부서별 연봉 합계 및 평균 그래프</h3>
+    <img src="data:image/png;base64,{{ graph }}"
+        alt="부서별 연봉 그래프">
+
+    <h3>4. 성별, 직급별 빈도표</h3>
+    {{ table4 | safe }}
+
+    <h3>5. 부서별 최고 연봉자</h3>
+    {{ table5 | safe }}
+
+    <h3>6. 부서별 직원 비율</h3>
+
+    <p>총 인원 : {{ total }}명</p>
+
+    {{ table6 | safe }}
+
+    <hr>
+
+    <a href="/">메인 페이지로 돌아가기</a>
+
+</body>
+</html>
