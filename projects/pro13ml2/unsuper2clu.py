@@ -46,3 +46,17 @@ for cluster_id, info in sorted(cluster_info.items()):
     student_list = ", ".join(info["students"])
     print(f'군집 {cluster_id}:평균 점수={avg_score:.2f}, 학생들={student_list}')
 
+x_positions = np.arange(len(students))
+y_scores = scores.ravel()
+colors = {1:'red', 2:'blue', 3:'green'}
+plt.figure(figsize=(10, 6))
+for i, (x, y, cluster) in enumerate(zip(x_positions, y_scores, clusters)):
+    plt.scatter(x, y, color=colors[cluster], s=100)
+    plt.text(x, y + 1.5, students[i], fontsize=12, ha='center')
+    
+plt.xticks(x_positions, students)
+plt.xlabel('Students')
+plt.ylabel('Score')
+plt.title('Score cluster')
+plt.grid(True)
+plt.show()
